@@ -30,6 +30,7 @@ public class MainRetroActivity extends AppCompatActivity implements View.OnClick
     //Declaring RecyclerView and labeling it retroScreen
     RecyclerView retroScreen;
     Button buttonSwitch;
+    Boolean buttonPress = false;
 
 
     @Override
@@ -60,9 +61,10 @@ public class MainRetroActivity extends AppCompatActivity implements View.OnClick
         buttonSwitch = findViewById(R.id.button_switch);
         buttonSwitch.setOnClickListener(this);
         retroScreen = findViewById(R.id.retro_Screen);
-        // Init retroScreen by findViewById to retro_screen layout
+//         Init retroScreen by findViewById to retro_screen layout
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         retroScreen.setLayoutManager(linearLayoutManager);
+//        buttonPress = true;
 //        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 4);
 
 //        retroScreen.setLayoutManager(gridLayoutManager);
@@ -77,8 +79,17 @@ public class MainRetroActivity extends AppCompatActivity implements View.OnClick
 //        Toast.makeText(this, "SWITCH!", Toast.LENGTH_SHORT).show();
 //        GridLayoutManager gridLayoutManager = new GridLayoutManager(MainRetroActivity.this,4);
 //        gridLayoutManager.setSpanCount(gridLayoutManager.getSpanCount() == 2 ? 1 : 4);
+        if (buttonPress == true) {
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(MainRetroActivity.this, 4);
+            retroScreen.setLayoutManager(gridLayoutManager);
+            buttonPress = false;
+        }     else if (buttonPress == false) {
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+            retroScreen.setLayoutManager(linearLayoutManager);
+            buttonPress = true;
+        }
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 4);
-        retroScreen.setLayoutManager(gridLayoutManager);
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 4);
+//        retroScreen.setLayoutManager(gridLayoutManager);
     }
 }

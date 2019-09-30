@@ -50,7 +50,7 @@ public class ShibeAdapter extends RecyclerView.Adapter<ShibeAdapter.ShibeViewHol
 
         Glide.with(context)
                 .load(shibeUrl)
-                .centerCrop()
+                .circleCrop()
                 .into(holder.ivShibeImage)
                 ;
     }
