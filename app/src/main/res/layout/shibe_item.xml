@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ImageView with id of iv_shibe_image-->
+
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/iv_shibe_image"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    tools:src="@drawable/ic_launcher_background">
+</ImageView>
+
+
