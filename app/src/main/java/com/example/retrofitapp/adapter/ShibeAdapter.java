@@ -21,6 +21,7 @@ public class ShibeAdapter extends RecyclerView.Adapter<ShibeAdapter.ShibeViewHol
     private List<String> shibeUrls;
 
     private Context context;
+
     // passing in List<String> labeling it shibeUrls into ShibeAdapter
     public ShibeAdapter(List<String> shibeUrls) {
         this.shibeUrls = shibeUrls;
@@ -45,24 +46,25 @@ public class ShibeAdapter extends RecyclerView.Adapter<ShibeAdapter.ShibeViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ShibeViewHolder holder, int position) {
-      // Binding ViewHolders
+        // Binding ViewHolders
         String shibeUrl = shibeUrls.get(position);
 
         Glide.with(context)
                 .load(shibeUrl)
                 .circleCrop()
                 .into(holder.ivShibeImage)
-                ;
+        ;
     }
 
     @Override
     public int getItemCount() {
-       // returns shibeUrl's layout size
+        // returns shibeUrl's layout size
         return shibeUrls.size();
     }
 
     class ShibeViewHolder extends RecyclerView.ViewHolder {
         ImageView ivShibeImage;
+
         //Declaring ImageView labeling it to ivShibeImage
         ShibeViewHolder(@NonNull View itemView) {
             super(itemView);
